@@ -1,0 +1,50 @@
+{
+  "name": "dsh-money-meter",
+  "version": "0.1.0",
+  "description": "Money meter for DeepSeek Harness: shows the running cost of the current session and the remaining DeepSeek account balance on the composer stats row, with an upward-opening detail panel.",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "usage",
+    "cost",
+    "balance"
+  ],
+  "type": "module",
+  "license": "MIT",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "test": "node --test tests/*.test.js",
+    "verify": "npm run check && npm test"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  }
+}

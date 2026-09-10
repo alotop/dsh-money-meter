@@ -1,0 +1,9 @@
+# dsh-money-meter bundle patch: inserts this plugin's row into the profile
+# roster. Install with `dsh plugin --profile web add <path-or-git-url>`; the row
+# mounts BOTH halves — the Host side (llm/stream usage accrual, DeepSeek balance
+# lookup through ctx.credentials + ctx.subprocess, and the /dsh-money-meter
+# loopback RPC) and the browser side (the composer-dock meter, via the
+# `dsh.client` declaration in package.json).
+- insert:
+    - id: money-meter
+      name: 'dsh-money-meter'
